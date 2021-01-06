@@ -1,9 +1,3 @@
-<h2>Welcome to my app</h2>
-<hr />
-
-<app-sample></app-sample>
-
-<hr />
-
-<p>From App</p>
-<app-demo></app-demo>
+<div class="container p-5">
+  <app-sample [header]="title" (userEvent)="parentHandler($event)"></app-sample>
+</div>

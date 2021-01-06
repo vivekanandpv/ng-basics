@@ -6,6 +6,9 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  name = 'vinayak patil';
-  today = new Date();
+  title = 'Learning Angular';
+
+  parentHandler(n: number) {
+    console.log('Parent', n);
+  }
 }
