@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { UserViewModel } from 'src/models/domain.models';
 import { UserEventArgs } from 'src/models/eventargs.model';
 
 @Component({
@@ -7,7 +8,13 @@ import { UserEventArgs } from 'src/models/eventargs.model';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Learning Angular';
+  viewModel: UserViewModel = {
+    name: 'Default User',
+    city: 'Mysuru',
+    dob: new Date('2000-05-10'),
+    isActive: true,
+    score: 568,
+  };
 
   parentHandler(args: UserEventArgs) {
     console.log('Parent', args);

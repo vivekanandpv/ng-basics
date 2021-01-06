@@ -1,3 +1,6 @@
 <div class="container p-5">
-  <app-sample [header]="title" (userEvent)="parentHandler($event)"></app-sample>
+  <app-sample
+    [user]="viewModel"
+    (userEvent)="parentHandler($event)"
+  ></app-sample>
 </div>

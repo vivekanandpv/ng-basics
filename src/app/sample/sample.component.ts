@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { UserViewModel } from 'src/models/domain.models';
 import { UserEventArgs } from 'src/models/eventargs.model';
 
 @Component({
@@ -7,7 +8,7 @@ import { UserEventArgs } from 'src/models/eventargs.model';
   styleUrls: ['./sample.component.scss'],
 })
 export class SampleComponent implements OnInit {
-  @Input() header: string;
+  @Input() user: UserViewModel;
   @Output() userEvent = new EventEmitter<UserEventArgs>();
 
   constructor() {}

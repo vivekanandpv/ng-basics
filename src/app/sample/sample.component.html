@@ -1,4 +1,27 @@
-<h3>{{ header }}</h3>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th>Name</th>
+      <td>{{ user.name }}</td>
+    </tr>
+    <tr>
+      <th>City</th>
+      <td>{{ user.city }}</td>
+    </tr>
+    <tr>
+      <th>DoB</th>
+      <td>{{ user.dob | date: "dd-MM-yyyy" }}</td>
+    </tr>
+    <tr>
+      <th>Score</th>
+      <td>{{ user.score }}</td>
+    </tr>
+    <tr>
+      <th>Active?</th>
+      <td>{{ user.isActive }}</td>
+    </tr>
+  </tbody>
+</table>
 
 <hr />
 
