@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { UserEventArgs } from 'src/models/eventargs.model';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 export class AppComponent {
   title = 'Learning Angular';
 
-  parentHandler(n: number) {
-    console.log('Parent', n);
+  parentHandler(args: UserEventArgs) {
+    console.log('Parent', args);
   }
 }
