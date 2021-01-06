@@ -18,7 +18,10 @@
     </tr>
     <tr>
       <th>Active?</th>
-      <td>{{ user.isActive }}</td>
+      <td>
+        <span class="badge badge-success" *ngIf="user.isActive">Active</span>
+        <span class="badge badge-danger" *ngIf="!user.isActive">Inactive</span>
+      </td>
     </tr>
   </tbody>
 </table>
