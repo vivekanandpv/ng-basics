@@ -10,6 +10,12 @@ import { UserEventArgs } from 'src/models/eventargs.model';
 export class AppComponent {
   counter = 5;
 
+  style = {
+    color: 'blue',
+    'font-size': '24px',
+    'font-weight': '700',
+  };
+
   onChangeClass() {
     if (this.counter > 1) {
       --this.counter;
