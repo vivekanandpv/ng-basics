@@ -1,6 +1,16 @@
 <div class="container p-5">
-  <app-sample
-    [user]="viewModel"
-    (userEvent)="parentHandler($event)"
-  ></app-sample>
+  <h3>Learning Directives</h3>
+  <hr />
+
+  <!-- <ul>
+    <li *ngFor="let city of cities">{{ city }}</li>
+  </ul> -->
+
+  <!-- <div *ngFor="let city of cities">
+    <p>
+      <span>{{ city }}</span>
+    </p>
+  </div> -->
+
+  <app-demo *ngFor="let c of cities" [city]="c"></app-demo>
 </div>

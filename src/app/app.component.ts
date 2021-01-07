@@ -8,6 +8,8 @@ import { UserEventArgs } from 'src/models/eventargs.model';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  cities: string[] = ['Bengaluru', 'Madurai', 'Delhi', 'Kokata', 'London'];
+
   viewModel: UserViewModel = {
     name: 'Default User',
     city: 'Mysuru',
