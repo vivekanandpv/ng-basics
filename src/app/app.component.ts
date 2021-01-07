@@ -8,39 +8,27 @@ import { UserEventArgs } from 'src/models/eventargs.model';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hour = 10;
+  counter = 5;
 
-  setHour = 12;
-
-  viewModel: UserViewModel = {
-    name: 'Default User',
-    city: 'Mysuru',
-    dob: new Date('2000-05-10'),
-    isActive: true,
-    score: 568,
-  };
-
-  parentHandler(args: UserEventArgs) {
-    console.log('Parent', args);
-  }
-
-  getGreeting(): string {
-    if (this.hour < 12) {
-      return 'Good morning';
-    } else if (this.hour < 17) {
-      return 'Good afternoon';
-    } else if (this.hour < 20) {
-      return 'Good evening';
+  onChangeClass() {
+    if (this.counter > 1) {
+      --this.counter;
     } else {
-      return 'Good night';
+      this.counter = 5;
     }
   }
 
-  onIncrement() {
-    if (this.hour < 24) {
-      ++this.hour;
-    } else {
-      this.hour = 0;
-    }
+  get css(): any {
+    //  variant 1: string
+    return `display-${this.counter}`;
+
+    //  variant 2: string[]
+    // return [`display-${this.counter}`, 'text-success', 'font-weight-bold'];
+
+    //  variant 3: configuration object
+    // return {
+    //   'text-success': true,
+    //   'display-3': false,
+    // };
   }
 }

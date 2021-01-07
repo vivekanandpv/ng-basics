@@ -1,19 +1,8 @@
 <div class="container p-5">
   <h3>Learning Directives</h3>
   <hr />
-
-  <button class="btn btn-primary" (click)="onIncrement()">
-    Increment the hour <span>{{ hour }}</span>
+  <button class="btn btn-warning" (click)="onChangeClass()">
+    Change Style
   </button>
-
-  <p>ngSwitch</p>
-  <div [ngSwitch]="hour">
-    <h3 *ngSwitchCase="setHour">Good morning!</h3>
-
-    <h3 *ngSwitchDefault>Good day!</h3>
-  </div>
-
-  <hr />
-  <p>Logic</p>
-  <h3>{{ getGreeting() }}</h3>
+  <h3 [ngClass]="css">This is a sample text</h3>
 </div>
