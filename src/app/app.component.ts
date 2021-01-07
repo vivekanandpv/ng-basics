@@ -8,7 +8,9 @@ import { UserEventArgs } from 'src/models/eventargs.model';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  cities: string[] = ['Bengaluru', 'Madurai', 'Delhi', 'Kokata', 'London'];
+  hour = 10;
+
+  setHour = 12;
 
   viewModel: UserViewModel = {
     name: 'Default User',
@@ -20,5 +22,25 @@ export class AppComponent {
 
   parentHandler(args: UserEventArgs) {
     console.log('Parent', args);
+  }
+
+  getGreeting(): string {
+    if (this.hour < 12) {
+      return 'Good morning';
+    } else if (this.hour < 17) {
+      return 'Good afternoon';
+    } else if (this.hour < 20) {
+      return 'Good evening';
+    } else {
+      return 'Good night';
+    }
+  }
+
+  onIncrement() {
+    if (this.hour < 24) {
+      ++this.hour;
+    } else {
+      this.hour = 0;
+    }
   }
 }

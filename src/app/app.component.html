@@ -2,15 +2,18 @@
   <h3>Learning Directives</h3>
   <hr />
 
-  <!-- <ul>
-    <li *ngFor="let city of cities">{{ city }}</li>
-  </ul> -->
+  <button class="btn btn-primary" (click)="onIncrement()">
+    Increment the hour <span>{{ hour }}</span>
+  </button>
 
-  <!-- <div *ngFor="let city of cities">
-    <p>
-      <span>{{ city }}</span>
-    </p>
-  </div> -->
+  <p>ngSwitch</p>
+  <div [ngSwitch]="hour">
+    <h3 *ngSwitchCase="setHour">Good morning!</h3>
 
-  <app-demo *ngFor="let c of cities" [city]="c"></app-demo>
+    <h3 *ngSwitchDefault>Good day!</h3>
+  </div>
+
+  <hr />
+  <p>Logic</p>
+  <h3>{{ getGreeting() }}</h3>
 </div>
