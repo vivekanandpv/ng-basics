@@ -2,16 +2,15 @@
   <h3>Learning Directives</h3>
   <hr />
   <!-- <app-demo></app-demo> -->
-  <button
-    v2Premium
-    [color]="'white'"
-    [backgroundColor]="'green'"
-    (v2Event)="v2HandlerParent($event)"
-  >
-    Hi there!
-  </button>
+  <app-sample>
+    <div class="alert alert-danger" role="alert">
+      A simple danger alert—check it out!
+    </div>
 
-  <hr />
+    <h3>This is a content projection</h3>
 
-  <app-sample v2Premium [color]="'blue'"></app-sample>
+    <input type="text" class="form-control" />
+
+    <p>This is a p</p>
+  </app-sample>
 </div>
