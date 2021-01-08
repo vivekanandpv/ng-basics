@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Observable } from 'rxjs';
 import { UserViewModel } from 'src/models/domain.models';
 import { UserEventArgs } from 'src/models/eventargs.model';
 import { DataService } from './_services/data.service';
@@ -9,8 +10,9 @@ import { DataService } from './_services/data.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(public dataService: DataService) {
-    console.log(this.dataService.counter);
+  localCounter$: Observable<number>;
+  constructor(private dataService: DataService) {
+    this.localCounter$ = this.dataService.counter$;
   }
 
   clickHandler() {

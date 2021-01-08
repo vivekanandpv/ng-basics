@@ -37,9 +37,4 @@ export class PremiumDirective {
 
   @HostBinding('style.border')
   borderStyle = '0.5px solid grey';
-
-  @HostListener('click', ['$event'])
-  directiveClickHandler(args: MouseEvent) {
-    this.v2Event.emit(args.target?.innerHTML);
-  }
 }

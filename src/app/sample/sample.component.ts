@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
 import { UserViewModel } from 'src/models/domain.models';
 import { UserEventArgs } from 'src/models/eventargs.model';
 import { DataService } from '../_services/data.service';
@@ -9,8 +10,9 @@ import { DataService } from '../_services/data.service';
   styleUrls: ['./sample.component.scss'],
 })
 export class SampleComponent implements OnInit {
-  constructor(public dataService: DataService) {
-    console.log(this.dataService.counter);
+  localCounter$: Observable<number>;
+  constructor(private dataService: DataService) {
+    this.localCounter$ = this.dataService.counter$;
   }
 
   ngOnInit(): void {}

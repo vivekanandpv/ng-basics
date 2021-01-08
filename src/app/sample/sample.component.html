@@ -1,5 +1,1 @@
-<p>Sample {{ dataService.counter }}</p>
-
-<button (click)="dataService.increment()" class="btn btn-warning">
-  Increment
-</button>
+<p>Sample {{ localCounter$ | async }}</p>

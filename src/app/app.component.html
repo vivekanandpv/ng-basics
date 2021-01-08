@@ -4,7 +4,7 @@
     <button class="btn btn-primary btn-sm" (click)="clickHandler()">
       Increment
     </button>
-    {{ dataService.counter }}
+    {{ localCounter$ | async }}
   </h3>
   <hr />
   <app-demo></app-demo>

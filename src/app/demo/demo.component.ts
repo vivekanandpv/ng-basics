@@ -10,6 +10,7 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
+import { Observable } from 'rxjs';
 import { DataService } from '../_services/data.service';
 
 @Component({
@@ -18,7 +19,8 @@ import { DataService } from '../_services/data.service';
   styleUrls: ['./demo.component.scss'],
 })
 export class DemoComponent {
-  constructor(public dataService: DataService) {
-    console.log(this.dataService.counter);
+  localCounter$: Observable<number>;
+  constructor(private dataService: DataService) {
+    this.localCounter$ = this.dataService.counter$;
   }
 }
