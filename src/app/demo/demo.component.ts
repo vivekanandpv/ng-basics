@@ -1,4 +1,6 @@
 import {
+  AfterContentChecked,
+  AfterContentInit,
   AfterViewChecked,
   AfterViewInit,
   Component,
@@ -15,23 +17,23 @@ import {
   styleUrls: ['./demo.component.scss'],
 })
 export class DemoComponent
-  implements OnInit, AfterViewInit, OnChanges, DoCheck, AfterViewChecked {
+  implements
+    OnInit,
+    AfterViewInit,
+    DoCheck,
+    AfterViewChecked,
+    AfterContentInit,
+    AfterContentChecked {
   @Input() city!: string;
   counter = 100;
-  constructor() {
-    console.log('constructor', this.city);
-    setTimeout(() => {
-      console.log('Timer triggered');
-      ++this.counter;
-    }, 10000);
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('ngOnChanges', changes);
-  }
+  constructor() {}
 
   ngOnInit(): void {
     console.log('ngOnInit', this.city);
+  }
+
+  ngAfterContentInit(): void {
+    console.log('ngAfterContentInit');
   }
 
   ngAfterViewInit(): void {
@@ -44,6 +46,10 @@ export class DemoComponent
 
   ngAfterViewChecked(): void {
     console.log('ngAfterViewChecked');
+  }
+
+  ngAfterContentChecked(): void {
+    console.log('ngAfterContentChecked');
   }
 
   onClick() {

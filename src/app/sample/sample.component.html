@@ -1,10 +1,5 @@
 <p>Begin</p>
 <hr />
-<ng-content select="div"></ng-content>
+<ng-content select="img" *ngIf="enableImage"></ng-content>
 <hr />
 <p>End</p>
-<ng-content select="input"></ng-content>
-
-<hr />
-
-<ng-content></ng-content>

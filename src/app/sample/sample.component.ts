@@ -8,6 +8,7 @@ import { UserEventArgs } from 'src/models/eventargs.model';
   styleUrls: ['./sample.component.scss'],
 })
 export class SampleComponent implements OnInit {
+  enableImage = false;
   constructor() {}
 
   ngOnInit(): void {}
