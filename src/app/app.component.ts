@@ -7,4 +7,8 @@ import { UserEventArgs } from 'src/models/eventargs.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {}
+export class AppComponent {
+  v2HandlerParent(args: string) {
+    console.log('Component Handler', args);
+  }
+}

@@ -2,7 +2,12 @@
   <h3>Learning Directives</h3>
   <hr />
   <!-- <app-demo></app-demo> -->
-  <button v2Premium [color]="'white'" [backgroundColor]="'green'">
+  <button
+    v2Premium
+    [color]="'white'"
+    [backgroundColor]="'green'"
+    (v2Event)="v2HandlerParent($event)"
+  >
     Hi there!
   </button>
 

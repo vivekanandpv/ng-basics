@@ -1,4 +1,11 @@
-import { Directive, HostBinding, Input } from '@angular/core';
+import {
+  Directive,
+  EventEmitter,
+  HostBinding,
+  HostListener,
+  Input,
+  Output,
+} from '@angular/core';
 
 @Directive({
   selector: '[v2Premium]',
@@ -11,6 +18,8 @@ export class PremiumDirective {
   @HostBinding('style.backgroundColor')
   @Input()
   backgroundColor!: string;
+
+  @Output() v2Event = new EventEmitter<string>();
 
   constructor() {}
 
@@ -28,4 +37,9 @@ export class PremiumDirective {
 
   @HostBinding('style.border')
   borderStyle = '0.5px solid grey';
+
+  @HostListener('click', ['$event'])
+  directiveClickHandler(args: MouseEvent) {
+    this.v2Event.emit(args.target?.innerHTML);
+  }
 }
