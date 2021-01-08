@@ -1,5 +1,12 @@
 <div class="container p-5">
-  <h3>Learning Directives</h3>
+  <h3>
+    Learning Services
+    <button class="btn btn-primary btn-sm" (click)="clickHandler()">
+      Increment
+    </button>
+    {{ dataService.counter }}
+  </h3>
   <hr />
   <app-demo></app-demo>
+  <app-sample></app-sample>
 </div>

@@ -1,5 +1,5 @@
-<p>Begin</p>
-<hr />
-<ng-content select="img" *ngIf="enableImage"></ng-content>
-<hr />
-<p>End</p>
+<p>Sample {{ dataService.counter }}</p>
+
+<button (click)="dataService.increment()" class="btn btn-warning">
+  Increment
+</button>

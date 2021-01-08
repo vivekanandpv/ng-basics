@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UserViewModel } from 'src/models/domain.models';
 import { UserEventArgs } from 'src/models/eventargs.model';
+import { DataService } from '../_services/data.service';
 
 @Component({
   selector: 'app-sample',
@@ -8,8 +9,9 @@ import { UserEventArgs } from 'src/models/eventargs.model';
   styleUrls: ['./sample.component.scss'],
 })
 export class SampleComponent implements OnInit {
-  enableImage = false;
-  constructor() {}
+  constructor(public dataService: DataService) {
+    console.log(this.dataService.counter);
+  }
 
   ngOnInit(): void {}
 }
