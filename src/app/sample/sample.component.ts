@@ -8,18 +8,11 @@ import { UserEventArgs } from 'src/models/eventargs.model';
   styleUrls: ['./sample.component.scss'],
 })
 export class SampleComponent implements OnInit {
-  @Input() user!: UserViewModel;
-  @Output() userEvent = new EventEmitter<UserEventArgs>();
+  @Input() color!: string;
 
   constructor() {}
 
-  ngOnInit(): void {}
-
-  clickHandler() {
-    console.log('Sample: Click');
-    this.userEvent.emit({
-      message: 'User clicked the button',
-      on: new Date(),
-    });
+  ngOnInit(): void {
+    console.log('Color SampleComponent', this.color);
   }
 }

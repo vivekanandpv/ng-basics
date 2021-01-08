@@ -1,31 +1,13 @@
-<table class="table table-bordered">
+<p>App Sample</p>
+
+<table>
   <tbody>
     <tr>
-      <th>Name</th>
-      <td>{{ user.name }}</td>
-    </tr>
-    <tr>
-      <th>City</th>
-      <td>{{ user.city }}</td>
-    </tr>
-    <tr>
-      <th>DoB</th>
-      <td>{{ user.dob | date: "dd-MM-yyyy" }}</td>
-    </tr>
-    <tr>
-      <th>Score</th>
-      <td>{{ user.score }}</td>
-    </tr>
-    <tr>
-      <th>Active?</th>
-      <td>
-        <span class="badge badge-success" *ngIf="user.isActive">Active</span>
-        <span class="badge badge-danger" *ngIf="!user.isActive">Inactive</span>
-      </td>
+      <td>Cell</td>
+      <td>Cell</td>
+      <td>Cell</td>
+      <td>Cell</td>
+      <td>Cell</td>
     </tr>
   </tbody>
 </table>
-
-<hr />
-
-<button class="btn btn-warning" (click)="clickHandler()">Talk to Parent</button>
