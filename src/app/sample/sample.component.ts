@@ -10,10 +10,5 @@ import { DataService } from '../_services/data.service';
   styleUrls: ['./sample.component.scss'],
 })
 export class SampleComponent implements OnInit {
-  localCounter$: Observable<number>;
-  constructor(private dataService: DataService) {
-    this.localCounter$ = this.dataService.counter$;
-  }
-
   ngOnInit(): void {}
 }
